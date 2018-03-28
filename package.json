@@ -3,18 +3,25 @@
 	"version": "0.1.0",
 	"private": true,
 	"dependencies": {
+		"antd": "^3.3.3",
+		"node-sass-chokidar": "^1.2.2",
+		"npm-run-all": "^4.1.2",
 		"react": "^16.2.0",
 		"react-dom": "^16.2.0",
 		"react-scripts": "1.1.1"
 	},
 	"author": "dhruvdutt <dhruvdutt.jadhav@gmail.com",
 	"scripts": {
-		"start": "react-scripts start",
-		"build": "react-scripts build",
-		"test": "react-scripts test --env=jsdom",
+		"build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
+		"build-js": "react-scripts build",
+		"build": "npm-run-all build-css build-js",
 		"eject": "react-scripts eject",
 		"lint": "eslint .",
-		"lintfix": "eslint . --fix"
+		"lintfix": "eslint . --fix",
+		"start-js": "react-scripts start",
+		"start": "npm-run-all -p watch-css start-js",
+		"test": "react-scripts test --env=jsdom",
+		"watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive"
 	},
 	"devDependencies": {
 		"babel-eslint": "^8.2.2",
