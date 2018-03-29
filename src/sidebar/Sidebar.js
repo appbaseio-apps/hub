@@ -19,21 +19,21 @@ class Sidebar extends Component {
 	}
 	render() {
 		return (
-			<Sider trigger={null}>
+			<Sider>
 				<Menu theme="dark" mode="inline" defaultSelectedKeys={['nodejs']}>
-					{/* <Link to="/"> */}
 					<Menu.Item key="nodejs" className="nodejs">
-						<img src={nodejs} alt="nodejs" />
-						<span>Node.js</span>
+						<Link to="/">
+							<img src={nodejs} alt="nodejs" />
+							<span>Node.js</span>
+						</Link>
 					</Menu.Item>
-					{/* </Link>
-					<Link to="/go"> */}
 					<Menu.Item key="go" className="go">
-						<img src={go} alt="go" />
-						<span>Go</span>
+						<Link to="/go">
+							<img src={go} alt="go" />
+							<span>Go</span>
+						</Link>
 					</Menu.Item>
-					{/* </Link>
-					<Link to="/python"> */}
+					{/* <Link to="/python"> */}
 					<Menu.Item key="python" className="python">
 						<img src={python} style={{ marginTop: '-0.25rem' }} alt="python" />
 						<span>Python</span>
