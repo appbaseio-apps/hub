@@ -1,6 +1,6 @@
 {
-  "editor.formatOnPaste": true,
-  "editor.formatOnSave": true,
-  "javascript.format.enable": true,
-  "prettier.eslintIntegration": true
+	"editor.formatOnPaste": true,
+	"editor.formatOnSave": true,
+	"javascript.format.enable": true,
+	"prettier.eslintIntegration": true
 }
